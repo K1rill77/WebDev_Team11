@@ -79,7 +79,7 @@ header .navbar a:hover {
 .sidebarBody {
   display: none;
   width: 8em;
-  height: 35vh;
+  height: 200px;
   background-color: var(--background-color);
   z-index: 1000;
   position: fixed;
