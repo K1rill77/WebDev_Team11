@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAVERA</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#home" class="logo">TRAV<span style="color: #ff3a20">ERA</span>
+      </a>
+      <div class="menu"></div>
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#explore">Explore</a></li>
+        <li><a href="#book">Book Now!</a></li>
+        <li><a href="#rate">Rate It!</a></li>
+      </ul>
+      <div class="burger" onclick="moveSidebar()">
+        <img src="menu.png">
+      </div>
+    </header>
+
+    <div class="sidebarBody" id="sidebarBody">
+      <div class="close" onclick="moveSidebar()">
+        <a>&times;</a>
+      </div>
+      <div class="sbtabs">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#book">Book Now!</a>
+        <a href="#rate">Rate It!</a>
+      </div>
+    </div>
+
+    <section class="home" id="home">
+      <img
+        id="slide-1"
+        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww"
+        alt="Travel"
+      />
+
+      <div class="text-container">
+        <h1>Travel Time! <br />Discover New Horizons</h1>
+        <p>
+          Safe travels, Happy memories. <br />
+          Your moment to discover new horizons safely and seamlessly.
+        </p>
+        <a href="#explore" class="explore-btn">Explore Now</a>
+      </div>
+    </section>
+
+    <section id="explore">
+      <div class="title">
+        <h2>From hidden gems to iconic wonders, it's Travel Time!</h2>
+      </div>
+    </section>
+
+    <section class="places-grid" id="explore">
+      <div class="place-card">
+        <div class="place-image">
+          <img
+            src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/186000/186444-Aklan-Province.jpg"
+            alt="Boracay"
+          />
+        </div>
+        <div class="place-details">
+          <h2>Boracay Island</h2>
+          <p>
+            Famous for its white sands and vibrant nightlife, Boracay Island is
+            where you get a chance to experience a perfect tropical paradise.
+          </p>
+          <form action="boracay.html">
+            <button type="submit">Learn More</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-image">
+          <img
+            src="https://imgs.search.brave.com/wEd4vNjObfPQ8liE4Pf9OI_8nr582r8CDLQjP65WOQ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YWltLmV4cGVkaWEu/Y29tL2Rlc3RpbmF0/aW9uLzEvYTEyOTU0/ZmMyNjIwMTIxMmEw/NTQwMWQyM2RmZWM2/ZDQuanBnP2ltcG9s/aWN5PWZjcm9wJnc9/MTA0MCZoPTU4MCZx/PW1lZGl1bUhpZ2g"
+            alt="Puerto Princesa"
+          />
+        </div>
+        <div class="place-details">
+          <h2>Puerto Princesa</h2>
+          <p>
+            Kayak through mystical caves, island-hop in Honda Bay, and swim with
+            bioluminescent plankton—Puerto Princesa is your perfect gateway.
+          </p>
+          <form action="puerto.html">
+            <button type="submit">Learn More</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-image">
+          <img
+            src="https://1.bp.blogspot.com/-Mq4zClZXB9Q/WcNK_e9gRdI/AAAAAAAAEzM/9BqC6XPHSmEmlkw-Ta5S_uYSlmlnpMKrwCLcBGAs/s1600/taal-volcano.jpg"
+            alt="Tagaytay"
+          />
+        </div>
+        <div class="place-details">
+          <h2>Tagaytay</h2>
+          <p>
+            A great place to enjoy scenic views of the Taal lake and volcano.
+            Tagaytay provides a lot of attractions that revolves around nature
+            tours.
+          </p>
+          <form action="tagaytay.html">
+            <button type="submit">Learn More</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-image">
+          <img
+            src="https://res.klook.com/image/upload/c_fill,w_528,h_396/activities/tzmboii0whxgpt45xz7h.jpg"
+            alt="Siargao Island"
+          />
+        </div>
+        <div class="place-details">
+          <h2>Siargao Island</h2>
+          <p>
+            Known as the surfing capital of the Philippines, Siargao Island is a
+            tourist hotspot for beachside activities like surfing, kayaking, and
+            snorkling.
+          </p>
+          <form action="siargao.html">
+            <button type="submit">Learn More</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="form">
+      <div class="form-container" id="book">
+        <div class="book">
+          <h2>Book Now!</h2>
+          <p>
+            Ready to embark on your next adventure? Book your trip now and let
+            the journey begin!
+          </p>
+          <form action="book.html">
+            <button type="submit">Book Now!</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="form-container" id="rate">
+        <div class="rate">
+          <h2>Rate It!</h2>
+          <p>
+            We value your feedback! Please take a moment to rate your
+            experience.
+          </p>
+          <form action="rate.html">
+            <button type="submit">Rate It!</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const menu = document.querySelector(".menu");
+      menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+    </script>
+    <script src="menu.js"></script>
+  </body>
+</html>

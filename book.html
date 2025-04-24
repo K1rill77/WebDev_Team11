@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAVERA</title>
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">TRAV<light style="color: #FF3A20;">ERA</light> </a>
+
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </header>
+
+    <section class="descp">
+        <div class="text">
+            <h2>The perfect escape is just a click away. <br> Reserve your dream trip today!</h2>
+        </div>
+    </section>
+
+    <section class="book-form" id="book-form">
+        <div class="form-field">  
+            <form action="#" id="healthForm" onsubmit="return handleSubmit()">
+                <fieldset>
+                    <legend><strong>Personal Information</strong></legend>
+            
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required />
+
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required />
+            
+                    <label for="con">Contact Number *</label>
+                    <input type="text" id="con" name="con" maxlength="12" required />
+            
+                    <label>Gender *</label>
+                    <div class="radio-group">
+                      <div class="group">
+                        <input type="radio" id="M" name="gender" value="Male" required onchange="toggleOtherGender(false)">
+                        <label for="M">Male</label><br>
+                      </div>
+                      <div class="group">
+                        <input type="radio" id="F" name="gender" value="Female" required onchange="toggleOtherGender(false)">
+                        <label for="F">Female</label><br>
+                      </div>
+                      <div class="group">
+                        <input type="radio" id="O" name="gender" value="Other" required onchange="toggleOtherGender(true)">
+                        <label for="O">Other</label>
+                      </div>
+                    </div>
+            
+                    <div id="otherGenderField">
+                      <label for="otherGenderText">Please specify:</label>
+                      <textarea id="otherGenderText" name="otherGenderText" rows="1"></textarea>
+                    </div>
+                </fieldset>
+
+                    <fieldset>
+                        <legend><strong>Destination</strong></legend>
+            
+                            <label for="destination">Destination *</label>
+                            <select id="destination" name="destination" required>
+                                <option value="" selected disabled>Select Destination</option>
+                                <option value="Boracay Island">Boracay Island</option>
+                                <option value="Puerto Princesa">Puerto Princesa</option>
+                                <option value="Tagaytay">Tagaytay</option>
+                                <option value="Siargao Island">Siargao Island</option>
+                            </select>
+
+                            <label for="per">Travelers *</label> <br>
+                            <label for="adults">Adults</label>
+                            <input type="number" id="adults" name="adults" min="1" max="100" required />
+
+                            <label for="children">Children</label>
+                            <input type="number" id="children" name="children" min="0" max="100"/>
+
+                            <label for="infants">Infants</label>
+                            <input type="number" id="infants" name="infants" min="0" max="100"/>
+                        </fieldset>
+                
+                <fieldset>
+                    <legend><strong>Health Status</strong></legend>
+            
+                    <label for="vaccinationStatus">Vaccination Status *</label>
+                    <select id="vaccinationStatus" name="vaccinationStatus" required>
+                      <option value="" selected disabled>Select Status</option>
+                      <option value="Vaccinated">✔ Vaccinated</option>
+                      <option value="Unvaccinated">❌ Unvaccinated</option>
+                    </select>
+            
+                    <label>Recent Symptoms</label>
+                    <div class="checkbox-group">
+                      <div class="group">
+                        <input type="checkbox" id="fever" name="symptoms" value="Fever">
+                        <label for="fever">Fever</label><br>
+                      </div>
+                      <div class="group">
+                        <input type="checkbox" id="cough" name="symptoms" value="Cough">
+                        <label for="cough">Cough</label><br>
+                      </div>
+                      <div class="group">
+                        <input type="checkbox" id="fatigue" name="symptoms" value="Fatigue">
+                        <label for="fatigue">Fatigue</label>
+                      </div>
+                      <div class="group">
+                        <input type="checkbox" id="none" name="symptoms" value="None" onclick = "uncheckSymptoms()">
+                        <label for="None">None</label>
+                      </div>
+                    </div>
+            
+                    <label for="lastCheckup">Last Medical Checkup *</label>
+                    <input type="date" id="lastCheckup" name="lastCheckup" required />
+            
+                    <label for="healthNotes">Additional Health Notes</label>
+                    <textarea id="healthNotes" name="healthNotes" rows="2"></textarea>
+                  </fieldset>
+
+                  <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="message">
+        <div class="thank-you-container hidden" id="thankYouContainer">
+            <div class="thank-you-message">All Set!</div>
+            <p>Woohoo! Your trip is officially ON. Pack your bags—we're handling the rest! Details coming soon</p>
+        </div>
+    </section>
+
+
+    <section class="table-result">
+        <div class="table-container hidden" id="tableContainer">
+            <h2>Reservation Details</h2>
+              <table id="resultTable">
+                  <thead>
+                  <tr>
+                      <th>Full Name</th>
+                      <th>Email</th>
+                      <th>Contact Number</th>
+                      <th>Gender</th>
+                      <th>Destination</th>
+                      <th>Vaccination Status</th>
+                      <th>Recent Symptoms</th>
+                      <th>Additional Health Notes</th>
+                      <th>Reservation Status</th>
+                  </tr>
+                  </thead>
+                  <tbody id="tableBody"></tbody>
+              </table>
+          </div>
+    </section>
+
+    <script src="Survey.js"></script>
+  </body>
+</html>

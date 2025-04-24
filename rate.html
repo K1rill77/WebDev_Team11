@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAVERA</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">TRAV<light style="color: #FF3A20;">ERA</light> </a>
+
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </header>
+
+    <section class="descp">
+        <div class="text">
+            <h2>Rate your experience <br> your opinion shapes future travels!</h2>
+        </div>
+    </section>
+
+    <section class="book-form" id="book-form">
+        <div class="form-field">  
+            <form action="#" id="rateForm" onsubmit="return handleSubmit(event)">
+                <fieldset>
+                    <legend><strong>Visitor Information</strong></legend>
+                    <label for="name">Name (Optional)</label>
+                    <input type="text" id="name" name="name"/><br>
+
+                    <label for="nationality">Nationality *</label>
+                    <select id="nationality" name="nationality" required>
+                        <option value="" selected disabled>Select Nationality</option>
+                        <option value="Local">Local</option>
+                        <option value="Foreign">Foreign</option>
+                        <option value="Dual">Dual</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend><strong>Destination Details</strong></legend>
+                    <label for="destination">Visited Destination *</label>
+                    <select id="destination" name="destination" required>
+                        <option value="" selected disabled>Select Destination</option>
+                        <option value="Boracay Island">Boracay Island</option>
+                        <option value="Puerto Princesa">Puerto Princesa</option>
+                        <option value="Tagaytay">Tagaytay</option>
+                        <option value="Siargao Island">Siargao Island</option>
+                    </select>
+
+                    <label for="date">Date Visited *</label>
+                    <input type="date" id="date" name="date" required />
+
+                    <label for="rating">Rate your vacation experience *</label>
+                    <div class="star-rating experience-rating">
+                        <i class="fa-solid fa-star" data-value="1"></i>
+                        <i class="fa-solid fa-star" data-value="2"></i>
+                        <i class="fa-solid fa-star" data-value="3"></i>
+                        <i class="fa-solid fa-star" data-value="4"></i>
+                        <i class="fa-solid fa-star" data-value="5"></i>
+                      </div>
+                      <input type="hidden" id="ratingExperience" name="ratingExperience" required />
+
+                    <label for="clean">Rate the Accomodation Cleanliness *</label>
+                    <div class="star-rating cleanliness-rating">
+                        <i class="fa-solid fa-star" data-value="1"></i>
+                        <i class="fa-solid fa-star" data-value="2"></i>
+                        <i class="fa-solid fa-star" data-value="3"></i>
+                        <i class="fa-solid fa-star" data-value="4"></i>
+                        <i class="fa-solid fa-star" data-value="5"></i>
+                      </div>
+                      <input type="hidden" id="ratingCleanliness" name="ratingCleanliness" required />
+
+                      <label for="Amenities">Amenities *</label>
+                      <div class="checkbox-group">
+                        <div class="group">
+                          <input type="checkbox" id="ParkingSpace" name="ParkingSpace" value="Parking Space">
+                          <label for="ParkingSpace">Parking Space</label><br>
+                        </div>
+                        <div class="group">
+                          <input type="checkbox" id="Restroom" name="Restroom" value="Restroom">
+                          <label for="Restroom">Restrooms</label><br>
+                        </div>
+                        <div class="group">
+                          <input type="checkbox" id="guide" name="guide" value="Tour Guide">
+                          <label for="guide">Tour Guide</label>
+                        </div>
+                        <div class="group">
+                            <input type="checkbox" id="play" name="play" value="Play Area">
+                            <label for="play">Play Area for Kids</label>
+                        </div>
+                        <div class="group">
+                            <input type="checkbox" id="food" name="food" value="On-site Restaurant(s)">
+                            <label for="food">On-site Restuatant(s)</label>
+                        </div>
+                        <div class="group">
+                          <input type="checkbox" id="none" name="None" value="None" onclick="uncheckAll()">
+                          <label for="None">None Available</label>
+                        </div>
+                      </div>
+
+                      <label for="comment">Additional Comment </label>
+                        <textarea id="comment" name="comment" rows="2"></textarea>
+            
+                </fieldset> 
+
+                  <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="message">
+        <div class="thank-you-container hidden" id="thankYouContainer">
+            <div class="thank-you-message">Thank You!</div>
+            <p>Thank you for sharing your feedback! <br> We're thrilled you enjoyed your trip and hope to welcome you back soon.</p>
+        </div>
+    </section>
+
+
+    <section class="table-result">
+        <div class="table-container hidden" id="tableContainer">
+          <h2>Feedback Summary</h2>
+          <table id="resultTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Nationality</th>
+                <th>Destination</th>
+                <th>Date Visited</th>
+                <th>Vacation Rating</th>
+                <th>Cleanliness Rating</th>
+                <th>Amenities</th>
+                <th>Additional Comment</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    <script src="rate.js"></script>
+  </body>
+</html>

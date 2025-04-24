@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*======= General style =======*/
+:root {
+    --background-color: #FFFFFF;
+    --text-color: #0A0903;
+    --button-color: #004E89;
+    --accent-color: #FF3A20;
+    --big-font: 4rem;
+    --h2-font: 3rem;
+    --p-font: 1.2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+/*======= Header style =======*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background-color);
+    padding: 8px 200px;
+    transition: 0.5s ease;
+}
+
+header .logo {
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--button-color);
+}
+
+header .navbar {
+    display: flex;
+    position: relative;
+}
+
+header .navbar a {
+    position: relative;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin-left: 30px;
+    padding: 10px 22px;
+    border-radius: 4px;
+    transition: ease .3s;
+}
+
+header .navbar a:hover {
+    background: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.burger {
+  margin-left: auto;
+}
+
+.sidebarBody {
+  display: none;
+  width: 8em;
+  height: 35vh;
+  background-color: var(--background-color);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0em;
+  flex-direction: column;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.sidebarBody.active {
+  display: flex;
+  transform: translateX(0);
+}
+
+.burger {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.burger:hover {
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.close {
+  font-size: 25px;
+  cursor: pointer;
+  display: block;
+  justify-content: right;
+  margin: 10px;
+}
+
+.close a {
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  bottom: 0;
+}
+
+.close a:hover {
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.sbtabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.sbtabs a {
+  position: relative;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 20px;
+  padding: 5px 11px;
+  border-radius: 4px;
+  transition: ease .3s;
+}
+
+.sbtabs a:hover {
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 1031px) {
+  .burger {
+      display: none;
+  }
+  header .navbar {
+      display: flex;
+  }
+}
+@media screen and (max-width: 1030px){
+  .burger {
+      display: flex;
+  }
+  header .navbar {
+      display: none;
+  }
+}
+
+/*======= Home Section style =======*/
+section {
+    padding: 50px;
+    justify-content: center;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background-color);
+}
+
+.home::before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: #ffffff4c;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .text-container {
+    z-index: 888;
+    color: var(--text-color); 
+    width: 70%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.home .text-container h1 {
+    font-size: var(--big-font);
+    font-weight: 900;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .text-container p {
+    margin-bottom: 65px;
+    font-weight: 500;
+    font-size: var(--p-font);
+}
+
+.home .text-container a {
+    background: var(--button-color);
+    padding: 15px 35px;
+    color: var(--background-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    border-radius: 5px;
+    transition: .3s ease;
+}
+
+.home .text-container a:hover {
+    padding: 20px 40px;
+}
+
+.home img {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1040px) {
+header {
+    padding: 12px 20px;
+}
+
+section {
+    padding: 100px 20px;
+}
+
+}
+
+/*======= Title Section style =======*/
+.title {
+    position: relative;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.title h2 {
+    font-size: var(--h2-font);
+    margin-top: 10px;
+    line-height: 1.1;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/*======= Explore Section style =======*/
+.places-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.place-card {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.place-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.place-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.place-details {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.place-details h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.place-details p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.place-details button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 20%;
+    color: var(--background-color);
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    opacity: .9;
+    transition: ease .40s;
+}
+.place-card button:hover {
+    opacity: 1;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.083);
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+/*======= Form Section style =======*/
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.form-container {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 40px;
+}
+
+/*======= Book Form style =======*/
+.book h2 {
+    font-size: var(--h2-font);
+    color: var(--accent-color);
+    font-family: "Bebas Neue", sans-serif;
+    margin-bottom: 10px;
+}
+
+.book p {
+    font-size: var(--p-font);
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.book form button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--background-color);
+    background: var(--button-color);
+    border: none;
+    border-radius: 4px;
+    opacity: .9;
+    transition: ease .40s;
+}
+
+.book form button:hover {
+    opacity: 1;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.048);
+    border-radius: 4px;
+    transform: scale(1.1);
+}
+
+/*======= Rate Form style =======*/
+.rate h2 {
+    font-size: var(--h2-font);
+    color: var(--accent-color);
+    font-family: "Bebas Neue", sans-serif;
+    margin-bottom: 10px;
+}
+
+.rate p {
+    font-size: var(--p-font);
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.rate form button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--background-color);
+    background: var(--button-color);
+    border: none;
+    border-radius: 4px;
+    opacity: .9;
+    transition: ease .40s;
+}
+
+.rate form button:hover {
+    opacity: 1;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.048);
+    border-radius: 4px;
+    transform: scale(1.1);
+}
+
+/*======= Star Rating style for rate form =======*/
+.star-rating {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+  
+.star-rating .fa-star.selected {
+  color: #ffcc00;
+}
+
+/*======= Info Style for pages =======*/
+
+.info {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--background-color);
+   }
+
+ .info::before {
+   z-index: 777;
+   content: '';
+   position: absolute;
+   background: #ffffff4c;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+ }
+
+ .info .text-container {
+   z-index: 888;
+   color: var(--text-color); 
+   width: 50%;
+   margin-top: 70px;
+   text-align: center;
+ }
+
+ .info .text-container h1 {
+   font-size: var(--big-font);
+   font-weight: 900;
+   font-family: 'Bebas Neue', sans-serif;
+   letter-spacing: 5px;
+   line-height: 75px;
+   margin-bottom: 20px;
+ }
+
+ .info .text-container p {
+   margin-bottom: 32px;
+   font-weight: 500;
+   font-size: var(--p-font);
+ }
+
+ .info img {
+   z-index: 000;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
